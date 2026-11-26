@@ -1,2 +1,2 @@
 # A_RanocoPortfolio
-my portfolio
+ https://shiequinn.github.io/A_RanocoPortfolio/ my portfolio
