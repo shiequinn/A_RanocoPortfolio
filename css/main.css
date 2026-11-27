@@ -222,9 +222,14 @@ html,body{
     color:white;
     text-decoration: none;
     font-size: 16px;
+    font-weight:bolder;
     justify-content:space-between;
     align-items:center;
     text-align: center
+}
+.contact-me a:hover,
+.services-booking a:hover{
+    color: black;
 }
 
 .services-booking i:hover,

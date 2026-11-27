@@ -22,8 +22,8 @@
     <div class="frontpage">
     <div class="frontpage-container">
     <div class="toplinkButton">
-        <a href="https://www.facebook.com/iDesignWebDeveloper" target="_blank" rel="noopener" title="facebook"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://shiequinn.com/" title="share"><i class="fa-sharp fa-solid fa-share-nodes"></i></a>
+        <a href="https://maps.app.goo.gl/xNpSWJp8xXaPisxk6" target="_blank" rel="noopener" title="Location"><i class="fa-solid fa-map-location-dot"></i></a>
+        <a id="share-messenger" href="https://shiequinn.com" title="share"><i class="fa-sharp fa-solid fa-share-nodes"></i></a>
     </div>
     
     <div class="profile">
@@ -37,7 +37,7 @@
 
     <div class="services-booking">
     <i class="fa-regular fa-file-code"></i>
-    <a href="https://shiequinn.com/index.services" title="Services Page">Services Page</a>
+    <a href="https://shiequinn.com/index.services" title="Services Page">SERVICES</a>
     <div class="vertical-dots">
     <a href="https://shiequinn.com/index.projects" title="View Service"><i class="fas fa-ellipsis-h"></i></a>
 </div>
@@ -45,7 +45,7 @@
 
 <div class="contact-me">
 <i class="fa-solid fa-phone-volume"></i>
-<a href="https://wa.me/639173020909" title="Book now">Book now</a>
+<a href="https://wa.me/639173020909" title="Book now">BOOK NOW</a>
 <div class="vertical-dots">
 <a href="https://shiequinn.com/index.contactus" target="_blank" rel="noopener" title="View Contact Page"><i class="fas fa-ellipsis-h"></i></a>
   </div>
@@ -55,6 +55,7 @@
         <a href="https://www.instagram.com/anamarieranoco" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://m.me/iDesignWebDeveloper" target="_blank" rel="noopener" title="Chat with Me"><i class="fa-brands fa-facebook-messenger"></i></a>
         <a href="mailto:a.n.s.q_webdev.co@outlook.com" target="_blank" rel="noopener" title="Email me"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.facebook.com/iDesignWebDeveloper" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook"></i></a>
         </div>
 
 </div>
@@ -62,6 +63,23 @@
 </header>
 
 <script>
+    document.getElementById('share-messenger').addEventListener('click', async function(e) {
+        e.preventDefault();
+        const shareUrl = 'https://shiequinn.com';
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            window.location.href = `fb-messenger://share/?link=${encodeURIComponent(shareUrl)}`;
+        }else if (navigator.share) {
+                await navigator.share({
+                    title: 'Ana marie Ranoco Portfolio',
+                    url: shareUrl
+                });
+            } else {
+                await navigator.clipboard.writeText(shareUrl);
+                alert('Link copied! paste it into Messenger to share. ');
+                window.open('https://messenger.com' , '_blank' ,'noopener');
+        }
+    });
 
 
 </script>
