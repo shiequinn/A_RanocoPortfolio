@@ -391,6 +391,9 @@ html,body{
         flex-direction:row;
         height: auto;
     }
+    .social-icons a{
+        font-size: 25px;
+    }
 
 }
 
